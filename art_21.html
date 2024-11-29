@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artwork Details - Karina Piha</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;300;400&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Josefin Sans', sans-serif;
+            margin: 0;
+            background: #f4cda5;
+            color: #333;
+        }
+
+        h1,
+        h2,
+        h3,
+        p {
+            margin: 0;
+        }
+
+        h1,
+        h2,
+        a {
+            color: #333;
+        }
+
+        /* header */
+
+        /* https://codepen.io/mutedblues/pen/MmPNPG */
+
+        .header {
+            /*background-color: #f4cda5;*/
+            background: #f4cda5;
+
+            width: 100%;
+            z-index: 3;
+
+        }
+
+        .header ul {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+            overflow: hidden;
+
+        }
+
+        /* menu */
+        .header li a {
+            display: block;
+            padding: 20px 20px;
+            border-bottom: 2px solid #f4cda5;
+            text-decoration: none;
+            font-size: 1rem;
+            /* Aqui é onde o tamanho da fonte do menu é definido */
+        }
+
+        @media (min-width: 48em) {
+            .header li a {
+                font-size: .9725rem;
+                /* Aumente o tamanho da fonte para telas maiores */
+            }
+        }
+
+        .header li a:hover,
+        .header .menu-btn:hover {
+            border-bottom: 2px solid;
+        }
+
+
+
+        /* menu */
+
+        ul.menu {
+            background: #f4cda5;
+        }
+
+        .header .menu {
+            clear: both;
+            max-height: 0;
+            transition: max-height .2s ease-out;
+
+        }
+
+        /* menu icon */
+
+        .header .menu-icon {
+            cursor: pointer;
+            display: inline-block;
+            float: right;
+            padding: 28px 20px;
+            position: relative;
+            user-select: none;
+        }
+
+        .header .menu-icon .navicon {
+            background: #333;
+            display: block;
+            height: 2px;
+            position: relative;
+            transition: background .2s ease-out;
+            width: 18px;
+        }
+
+        .header .menu-icon .navicon:before,
+        .header .menu-icon .navicon:after {
+            background: #333;
+            content: '';
+            display: block;
+            height: 100%;
+            position: absolute;
+            transition: all .2s ease-out;
+            width: 100%;
+        }
+
+        .header .menu-icon .navicon:before {
+            top: 5px;
+        }
+
+        .header .menu-icon .navicon:after {
+            top: -5px;
+        }
+
+        /* menu btn */
+
+        .header .menu-btn {
+            display: none;
+        }
+
+        .header .menu-btn:checked~.menu {
+            max-height: 240px;
+        }
+
+        .header .menu-btn:checked~.menu-icon .navicon {
+            background: transparent;
+        }
+
+        .header .menu-btn:checked~.menu-icon .navicon:before {
+            transform: rotate(-45deg);
+        }
+
+        .header .menu-btn:checked~.menu-icon .navicon:after {
+            transform: rotate(45deg);
+        }
+
+        .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:before,
+        .header .menu-btn:checked~.menu-icon:not(.steps) .navicon:after {
+            top: 0;
+        }
+
+        /* 48em = 768px */
+
+        @media (min-width: 48em) {
+            .header li {
+                float: left;
+            }
+
+            .header li a {
+                padding: 20px 14px;
+            }
+
+            .header .menu {
+                clear: none;
+                float: right;
+                max-height: none;
+                margin-right: 20px;
+            }
+
+            .header .menu-icon {
+                display: none;
+            }
+        }
+
+
+        .product-container {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: stretch;
+            justify-content: center;
+            padding: 20px;
+            gap: 50px 20px;
+            width: 94.6%;
+        }
+
+        .image-container,
+        .details {
+            flex: 1 1 240px;
+            max-width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .main-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+
+
+        .details {
+            width: 90%;
+            padding: 20px;
+            text-align: left;
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-content: flex-start;
+            align-items: flex-start;
+        }
+
+
+        .image-container {
+            flex: 1 1 240px;
+            max-width: 400px;
+            text-align: center;
+            position: relative;
+        }
+
+
+
+        .main-image:hover {
+            transform: scale(1.05);
+        }
+
+        .gallery {
+            display: flex;
+            margin-top: 15px;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .gallery img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            cursor: pointer;
+            border: 2px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .gallery img:hover,
+        .gallery img.active {
+            border-color: #333;
+        }
+
+
+
+        .details h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+        }
+
+        .details p {
+
+            margin: 5px 0;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin: 15px 0;
+        }
+
+        footer {
+            background: #f4cda5;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        /* Overlay for Zoom */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+
+        .overlay img {
+            max-width: 90%;
+            max-height: 90%;
+            transition: transform 0.3s;
+        }
+
+        .overlay.visible {
+            display: flex;
+        }
+
+        /* Slideshow Navigation */
+        .slide-navigation {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            transform: translateY(-50%);
+            pointer-events: none;
+        }
+
+        .slide-navigation button {
+            background: rgba(0, 0, 0, 0.6);
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            padding: 10px;
+            cursor: pointer;
+            pointer-events: all;
+        }
+
+        @media (max-width: 768px) {
+            .product-container {
+                /* flex-direction: column; */
+                align-items: center;
+            }
+
+            .details {}
+        }
+    </style>
+</head>
+
+<body>
+    <div style="height: 13px"></div>
+    <header class="header">
+        <input class="menu-btn" type="checkbox" id="menu-btn" />
+        <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+        <ul class="menu">
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About Me</a></li>
+            <li><a href="./exhibitions.html">Art Exhibitions</a></li>
+            <li><a href="./contact.html">Contact</a></li>
+        </ul>
+    </header>
+
+    <div class="product-container">
+        <!-- Image Section -->
+        <div class="image-container">
+            <img id="mainImage" class="main-image" src="21.jpg" alt="Artwork Name" onclick="toggleZoom()">
+
+            <!-- Slideshow Navigation -->
+            <div class="slide-navigation">
+                <button onclick="prevImage()">❮</button>
+                <button onclick="nextImage()">❯</button>
+            </div>
+
+            <!-- Gallery -->
+            <div class="gallery">
+                <img class="active" src="21.jpg" alt="Artwork 1 Thumbnail" onclick="changeImage('21.jpg')">
+            </div>
+        </div>
+
+        <!-- Details Section -->
+        <div class="details">
+            <h2>"Men Also Cry"</h2>
+
+            <p>—</p>
+            <p>For more details or inquiries, please contact the artist directly.</p>
+            <p class="price">NZ$1800</p>
+
+            <!-- WhatsApp Link -->
+            <a href="https://api.whatsapp.com/send?phone=+64278755175&text=Hello%21%0AI+came+from+your+website.%0A%0Abhhj"
+                target="_blank"
+                style="border: 1px solid #333337;text-decoration: none;color: #333;font-weight: bold;background: #f4cda5;padding: 22px;">
+                Contact on WhatsApp
+            </a>
+
+            <hr style="
+    width: 100%;
+    border: 0.5px solid #dec0a1;
+">
+            <p><strong>Dimensions:</strong> 76x76cm
+                <br /> <br />
+                <strong>Media:</strong> mixed media
+            </p>
+        </div>
+
+    </div>
+
+    <!-- Overlay for Zoom -->
+    <div id="zoomOverlay" class="overlay" onclick="toggleZoom()">
+        <img id="zoomImage" src="21.jpg" alt="Zoomed Artwork">
+    </div>
+
+    <footer>
+        <p>© 2024 Karina Piha. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let currentIndex = 0;
+        const images = ["21.jpg"];
+
+        // Change main image
+        function changeImage(imageSrc) {
+            currentIndex = images.indexOf(imageSrc);
+            updateMainImage(imageSrc);
+        }
+
+        function updateMainImage(imageSrc) {
+            const mainImage = document.getElementById("mainImage");
+            mainImage.src = imageSrc;
+
+            const zoomImage = document.getElementById("zoomImage");
+            zoomImage.src = imageSrc;
+
+            const thumbnails = document.querySelectorAll(".gallery img");
+            thumbnails.forEach(img => img.classList.remove("active"));
+
+            const activeThumbnail = Array.from(thumbnails).find(img => img.src.includes(imageSrc));
+            if (activeThumbnail) activeThumbnail.classList.add("active");
+        }
+
+        // Slideshow navigation
+        function prevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            updateMainImage(images[currentIndex]);
+        }
+
+        function nextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            updateMainImage(images[currentIndex]);
+        }
+
+        // Zoom overlay toggle
+        function toggleZoom() {
+            const overlay = document.getElementById("zoomOverlay");
+            overlay.classList.toggle("visible");
+        }
+    </script>
+</body>
+
+</html>
