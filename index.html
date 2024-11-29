@@ -269,6 +269,56 @@
             color: #555;
         }
 
+        .artwork.sold,
+        .notforsale {
+            position: relative;
+            pointer-events: none;
+            /* Desabilita interação com a arte vendida */
+        }
+
+        .artwork.sold:hover img {
+            opacity: 0.4;
+            /* Torna a imagem mais opaca */
+            filter: blur(3px);
+            /* Aplica um desfoque na imagem */
+
+        }
+
+        .artwork.sold:hover {
+            transform: scale(1.05);
+            /* Aumenta a arte um pouco ao passar o mouse */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            /* Adiciona uma sombra */
+        }
+
+        .artwork.sold:after {
+            content: "SOLD";
+            position: absolute;
+            top: 4%;
+            left: 12%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(149 50 43);
+            padding: 10px 20px;
+            z-index: 1;
+        }
+
+        .artwork.notforsale:after {
+            content: "NOT FOR SALE";
+            position: absolute;
+            top: 4%;
+            left: 22%;
+            transform: translate(-50%, -50%);
+            font-size: 1rem;
+            font-weight: bold;
+            color: white;
+            background-color: rgb(224, 187, 0);
+            padding: 10px 20px;
+            z-index: 1;
+        }
+
         footer {
 
             background-color: #f4cda5;
@@ -312,7 +362,7 @@
         <section id="arts" class="art">
             <div class="gallery">
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_1.html">
                         <img src="1.jpg" alt="Stop?">
                         <h3>"Stop?"</h3>
                         <p>Available</p>
@@ -321,7 +371,7 @@
 
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_2.html">
                         <img src="2.jpg" alt="Flores à Iemanjá">
                         <h3>"Flores à Iemanjá"</h3>
                         <p>Available</p>
@@ -330,7 +380,7 @@
 
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_3.html">
                         <img src="3.jpg" alt="Summer Vibe">
                         <h3>"Summer Vibe"</h3>
                         <p>Available</p>
@@ -338,24 +388,30 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_4.html">
                         <img src="4.jpg" alt="I told you so">
                         <h3>"I Told You So"</h3>
-                      <p>Available</p>
+                        <p>Available</p>
+                    </a>
+                </div>
+                <div class="artwork">
+                    <a href="./art_0.html">
+                        <img src="0.jpg" alt="Artwork">
+                        <h3>—</h3>
+                        <p>Prints available (original disappeared)</p>
                     </a>
                 </div>
 
-
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_5.html">
                         <img src="5.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
+
 
                     </a>
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_6.html">
                         <img src="6.jpg" alt="Artwork">
                         <h3>"Pink Panther"</h3>
                         <p>NZ$560</p>
@@ -363,7 +419,7 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_7.html">
                         <img src="7.jpg" alt="Trust">
                         <h3>"Trust"</h3>
                         <p>NZ$1800</p>
@@ -371,7 +427,7 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_8.html">
                         <img src="8.jpg" alt="Strike">
                         <h3>"Strike"</h3>
                         <p>NZ$560</p>
@@ -379,7 +435,7 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_9.html">
                         <img src="9.jpg" alt="Let It Flow">
                         <h3>"Let It Flow"</h3>
                         <p>NZ$5600</p>
@@ -387,51 +443,50 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_10.html">
                         <img src="10.jpg" alt="Flowers">
                         <h3>"Flowers"</h3>
                         <p>NZ$560</p>
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_11.html">
                         <img src="11.jpg" alt="Monkey Mind">
-                        <h3>"Monkey Mind"</h3>
-                        <p>NZ$580</p>
+
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_12.html">
                         <img src="12.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
+
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_13.html">
                         <img src="13.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
+
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_14.html">
                         <img src="14.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
+
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_15.html">
                         <img src="15.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
+
                     </a>
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_16.html">
                         <img src="16.jpg" alt="Sorveteiro">
                         <h3>"Sorveteiro"</h3>
                         <p>NZ$1800</p>
@@ -439,30 +494,30 @@
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_17.html">
                         <img src="17.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
+
                     </a>
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_18.html">
                         <img src="18.jpg" alt="Spirit">
                         <h3>"Spirit"</h3>
                         <p>NZ$560</p>
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_19.html">
                         <img src="19.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
+
                     </a>
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_20.html">
                         <img src="20.jpg" alt="Window">
                         <h3>"Window"</h3>
                         <p>NZ$360</p>
@@ -470,7 +525,7 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_21.html">
                         <img src="21.jpg" alt="Mens also cry">
                         <h3>"Mens Also Cry"</h3>
                         <p>NZ$1800</p>
@@ -478,7 +533,7 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_22.html">
                         <img src="22.jpg" alt="Eric's Room">
                         <h3>"Eric's Room"</h3>
                         <p>NZ$1800</p>
@@ -487,7 +542,7 @@
 
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_23.html">
                         <img src="23.jpg" alt="Dainty">
                         <h3>"Dainty"</h3>
                         <p>NZ$1800</p>
@@ -495,22 +550,22 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_24.html">
                         <img src="24.jpg" alt="Putin">
                         <h3>"Putin"</h3>
                         <p>NZ$1800</p>
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_25.html">
                         <img src="25.jpg" alt="Artwork">
-                        <h3> SOLD </h3>
+
                     </a>
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_26.html">
                         <img src="26.jpg" alt="Justice">
                         <h3>"Justice"</h3>
                         <p>NZ$3600</p>
@@ -518,22 +573,30 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_27.html">
                         <img src="27.jpg" alt="Kate">
                         <h3>"Kate"</h3>
                         <p>NZ$180</p>
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_28.html">
                         <img src="28.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
+
                     </a>
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_29.html">
+                        <img src="29.jpg" alt="Jack Frost">
+                        <h3>"Jack Frost"</h3>
+                        <p>NZ$10.800</p>
+                    </a>
+                </div>
+
+                <div class="artwork">
+                    <a href="./art_30.html">
                         <img src="30.jpg" alt="Tamagochi">
                         <h3>"Tamagochi"</h3>
                         <p>NZ$360</p>
@@ -541,40 +604,39 @@
                 </div>
 
                 <div class="artwork">
-                    <a href="./art.html">
+                    <a href="./art_31.html">
                         <img src="31.jpg" alt="Surf">
                         <h3>"Surf"</h3>
                         <p>NZ$2400</p>
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_32.html">
                         <img src="32.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
+
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_33.html">
                         <img src="33.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
-                    </a>
-                </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
-                        <img src="34.jpg" alt="Artwork">
-                        <h3>SOLD</h3>
 
                     </a>
                 </div>
 
-                <div class="artwork">
-                    <a href="./art.html">
+                <div class="artwork sold">
+                    <a href="./art_34.html">
+                        <img src="34.jpg" alt="Self Protrait" />
+
+                    </a>
+                </div>
+                <div class="artwork notforsale">
+                    <a href="./art_35.html">
                         <img src="35.jpg" alt="Self Protrait">
                         <h3>"Self Protrait" feat. Mauricio Benega</h3>
-                        <p>NOT FOR SALE</p>
+
                     </a>
                 </div>
 
