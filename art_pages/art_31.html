@@ -349,7 +349,8 @@
     <div class="product-container">
         <!-- Image Section -->
         <div class="image-container">
-            <img id="mainImage" class="main-image" src="../images/31.jpg" alt="Artwork Name" onclick="toggleZoom()">
+            <img id="mainImage" loading="lazy" class="main-image" src="../images/31.jpg" alt="Artwork Name"
+                onclick="toggleZoom()">
 
             <!-- Slideshow Navigation -->
             <div class="slide-navigation">
@@ -359,7 +360,8 @@
 
             <!-- Gallery -->
             <div class="gallery">
-                <img class="active" src="../images/31.jpg" alt="Artwork 1 Thumbnail" onclick="changeImage('31.jpg')">
+                <img class="active" loading="lazy" src="../images/31.jpg" alt="Artwork 1 Thumbnail"
+                    onclick="changeImage('31.jpg')">
             </div>
         </div>
 
@@ -394,7 +396,7 @@
 
     <!-- Overlay for Zoom -->
     <div id="zoomOverlay" class="overlay" onclick="toggleZoom()">
-        <img id="zoomImage" src="../images/31.jpg" alt="Zoomed Artwork">
+        <img id="zoomImage" loading="lazy" src="../images/31.jpg" alt="Zoomed Artwork">
     </div>
 
     <footer>
