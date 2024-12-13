@@ -397,9 +397,18 @@
         <img id="zoomImage" src="../images/0.jpg" alt="Zoomed Artwork">
     </div>
 
+
     <footer>
-        <p>© 2024 Karina Piha. All rights reserved.</p>
+        <p>© <span id="current-year"></span> Karina Piha. All rights reserved.</p>
     </footer>
+
+    <script>
+        // Obtém o ano atual com base no horário do navegador
+        const currentYear = new Date().getFullYear();
+
+        // Insere o ano no elemento do footer
+        document.getElementById("current-year").textContent = currentYear;
+    </script>
 
     <script>
         let currentIndex = 0;
